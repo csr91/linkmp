@@ -32,10 +32,10 @@ def generar_link():
     payload = request.get_json()
 
     if payload is None:
-        return jsonify({'error': 'No se proporcionó un JSON válido'}), 400
+        return jsonify({'error': 'No se proporcionó un JJSON válido'}), 400
 
     payment_link = linkmp(payload)
     return jsonify({'enlace_de_pago': payment_link})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
